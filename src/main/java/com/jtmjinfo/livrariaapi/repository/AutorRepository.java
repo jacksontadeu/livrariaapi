@@ -1,4 +1,7 @@
 package com.jtmjinfo.livrariaapi.repository;
 
-public interface AutorRepository {
+import com.jtmjinfo.livrariaapi.model.Autor;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AutorRepository extends JpaRepository <Autor,Integer>{
 }
