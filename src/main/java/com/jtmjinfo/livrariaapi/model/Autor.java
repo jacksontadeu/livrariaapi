@@ -2,6 +2,7 @@ package com.jtmjinfo.livrariaapi.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 @Table(name = "autor")
 @Data
+@ToString(exclude = {"livros"})
 public class Autor {
     @Id
     @Column(name = "id")
@@ -22,8 +24,7 @@ public class Autor {
     @Column(name = "nacionalidade", nullable = false,length = 50)
     private String nacionalidade;
 
-   // @OneToMany(mappedBy = "autor")
-    @Transient
+   @OneToMany(mappedBy = "autor")
     private List<Livro> livros;
 
 }
