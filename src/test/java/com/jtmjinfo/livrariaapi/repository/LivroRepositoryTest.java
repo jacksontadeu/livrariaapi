@@ -56,6 +56,14 @@ class LivroRepositoryTest {
         List<Livro> livros = repository.findByTitulo("Biografia de JTMJ");
         livros.forEach(System.out::println);
     }
+    @Test
+    void listarTodosLivrosTest(){
+        repository.listarTodos().forEach(System.out::println);
+    }
+    @Test
+    void listarAutoresTest(){
+        repository.listarAutores().forEach(System.out::println);
+    }
 
 
 }
