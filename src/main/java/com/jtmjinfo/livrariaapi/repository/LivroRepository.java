@@ -1,9 +1,11 @@
 package com.jtmjinfo.livrariaapi.repository;
 
+import com.jtmjinfo.livrariaapi.enums.GeneroLivro;
 import com.jtmjinfo.livrariaapi.model.Autor;
 import com.jtmjinfo.livrariaapi.model.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -18,5 +20,8 @@ public interface LivroRepository extends JpaRepository<Livro,Integer> {
 
     @Query("select a from Livro l join l.autor a")
     List<Autor> listarAutores();
+
+    @Query("select l from Livro l where l.genero = :genero")
+    List<Livro> listarLivroPorGenero(@Param("genero") GeneroLivro genero);
 
 }

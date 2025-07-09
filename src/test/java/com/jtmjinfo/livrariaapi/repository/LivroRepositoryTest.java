@@ -64,6 +64,11 @@ class LivroRepositoryTest {
     void listarAutoresTest(){
         repository.listarAutores().forEach(System.out::println);
     }
+    @Test
+    void listarLivroPorGeneroTest(){
+        List<Livro> livros = repository.listarLivroPorGenero(GeneroLivro.BIOGRAFIA);
+        livros.forEach(System.out::println);
+    }
 
 
 }
