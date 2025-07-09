@@ -69,6 +69,10 @@ class LivroRepositoryTest {
         List<Livro> livros = repository.listarLivroPorGenero(GeneroLivro.BIOGRAFIA);
         livros.forEach(System.out::println);
     }
+    @Test
+    void alterarIsbnTest(){
+        repository.alterarIsbn("987654321",2);
+    }
 
 
 }
