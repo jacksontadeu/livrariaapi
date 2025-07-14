@@ -20,7 +20,7 @@ public class DataBaseConfiguration {
     @Value("${spring.datasource.driver-class-name}")
     String driver;
 
-    @Bean
+   // @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(driver);
@@ -29,7 +29,7 @@ public class DataBaseConfiguration {
         dataSource.setPassword(password);
         return dataSource;
     }
-   // @Bean
+   @Bean
     public DataSource hikariDataSource() {
        HikariDataSource dataSource = new HikariDataSource();
        dataSource.setJdbcUrl(url);
