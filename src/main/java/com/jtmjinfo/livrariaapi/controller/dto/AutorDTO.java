@@ -6,7 +6,8 @@ import java.time.LocalDate;
 
 public record AutorDTO(String nome,
                        LocalDate dataNascimento,
-                       String nacionalidade) {
+                       String nacionalidade,
+                       Integer id) {
 
     public Autor apearAutor() {
         Autor autor = new Autor();
