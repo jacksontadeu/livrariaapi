@@ -9,7 +9,7 @@ public record AutorDTO(String nome,
                        String nacionalidade,
                        Integer id) {
 
-    public Autor apearAutor() {
+    public Autor mapearAutor() {
         Autor autor = new Autor();
         autor.setNome(this.nome());
         autor.setDataNascimento(this.dataNascimento());
